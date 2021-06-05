@@ -4,7 +4,7 @@ const Footer = () => (
         <h3 className="font-bold mb-1 text-center">Subscribe to our NewsLetter</h3>
         <p className="text-sm text-center mb-2">Sign up free and be the first to get notified about new posts.</p>
         <div className="text-center">
-           <input type="text" placeholder="Your email adress" className="p-2 border-r-0 focus:outline-none focus:ring focus:border-gray-100" />
+           <input type="text" placeholder="Your email adress" className="w-full border border-gray-300 px-3 py-2 rounded-full shadow-sm focus:outline-none focus:border-gray-200 focus:ring-1 focus:ring-gray-200" />
         <button>Subscribe</button> 
         </div>
       
