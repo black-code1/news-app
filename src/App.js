@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import News from "./components/News";
 
 function App() {
+
+  const [articles, setArticles] = useState([])
+
+  useEffect(() => {
+    axios.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=fe81ab5fd99742d3b37c71dd20014868"
+      )
+      .then(
+        (data) => {
+          console.log(data.data.articles); 
+          setArticles(data.data.articles)
+        })
+      .catch(
+        (error) => { 
+          console.log(error)
+        })
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="mt-5 mx-auto max-w-md">
+      
+        {articles.length > 0 && articles.map((article,index) => <News key={index} {...article} />)}
+      </div>
+      
+   
   );
 }
 
