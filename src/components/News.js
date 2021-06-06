@@ -1,11 +1,11 @@
 const News = ({urlToImage,source, title, description, publishedAt}) => (
 
   <div>
-    <div className="max-w-sm rounded overflow-hidden shadow-lg h-full bg-white">
+    <div className="px-8 py-12 max-w-sm rounded-lg bg-white">
       <img 
       src={urlToImage}  
       alt={title}
-      className="w-full" />
+      className="-mt-16 rounded-lg shadow-xl" />
       <button className="bg-red-500 text-white text-sm mt-6 ml-2 py-1 px-2 rounded">{source.name}</button>
       <h1 className="ml-2 mt-1 font-bold">{title}</h1>
       <p className="ml-2 mt-2 text-sm text-gray-500">{description}</p>
