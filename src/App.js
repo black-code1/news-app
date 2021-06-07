@@ -10,7 +10,7 @@ function App() {
   const [articles, setArticles] = useState([])
 
   useEffect(() => {
-    axios.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=fe81ab5fd99742d3b37c71dd20014868"
+    axios.get(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${process.env.REACT_APP_NEWS_API}`
       )
       .then(
         (data) => {
