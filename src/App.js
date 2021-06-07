@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 
 import News from "./components/News";
 
@@ -23,8 +24,8 @@ function App() {
   },[])
   return (
     <>
-      
-      <div className="mt-12 mx-auto p-12 bg-gray-100">
+      <Nav />
+      <div className="mt-5 mx-auto p-12 bg-gray-100">
         <div className="grid grid-cols-3 grid-rows-3 gap-12">
           {articles.length > 0 && articles.slice(0,9).map((article,index) => <News key={index} {...article} />)}
         </div>

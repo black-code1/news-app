@@ -5,7 +5,7 @@ const News = ({urlToImage,source, title, description, publishedAt}) => (
       <img 
       src={urlToImage}  
       alt={title}
-      className="-mt-16 rounded-xl shadow-xl" />
+      className="-mt-16 rounded-xl shadow-xl transform transition duration-500 hover:scale-110" />
       <button className="bg-red-500 text-white text-xs mt-6 ml-2 py-1 px-2 rounded-2xl">{source.name}</button>
       <h1 className="mt-1 font-bold">{title}</h1>
       <p className="mt-2 text-sm text-gray-500">{description}</p>
