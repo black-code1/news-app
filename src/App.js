@@ -26,7 +26,7 @@ function App() {
     <>
       <Nav />
       <div className="mt-5 mx-auto p-12 bg-gray-100">
-        <div className="grid grid-cols-3 grid-rows-3 gap-12">
+        <div className="flex flex-col items-center space-y-20 lg:grid-cols-3 lg:grid-rows-3 md:space-y-0 md:grid md:gap-12  md:grid-cols-2">
           {articles.length > 0 && articles.slice(0,9).map((article,index) => <News key={index} {...article} />)}
         </div>
           
