@@ -1,5 +1,14 @@
-const News = ({urlToImage,source, title, description, publishedAt}) => (
+const News = ({urlToImage,source, title, description, publishedAt}) => {
 
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+  const publishedAtDateFormat = new Date(publishedAt)
+  const publishedAtDateFormatFullYear = publishedAtDateFormat.getFullYear();
+  const publishedAtDateFormatMonth = monthNames[publishedAtDateFormat.getMonth()]
+  const publishedAtDateFormatDate = publishedAtDateFormat.getDate()
+
+  return (
   <div>
     <div className="px-6 py-8 max-w-sm rounded-xl shadow-xl bg-white">
       <img 
@@ -16,15 +25,12 @@ const News = ({urlToImage,source, title, description, publishedAt}) => (
       className="h-8 w-8 rounded-full object-cover" />
         <span className="text-xs ml-1">David Smith</span>
         <span className="ml-1 h-1 w-1 bg-red-500 rounded-full"></span>
-        <span className="text-xs ml-1">{publishedAt}</span>
+        <span className="text-xs ml-1">{publishedAtDateFormatMonth + " " + publishedAtDateFormatDate + ", " + publishedAtDateFormatFullYear} </span>
       </div>
     </div>
     
   </div>
-
-
-
-);
-
+  )
+}
 
 export default News;
