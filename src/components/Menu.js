@@ -1,18 +1,82 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
+import { useState } from "react";
+
 
 const Menu = () => {
+ 
+ 
+  const [showDropdownStateBlog, setShowDropDownStateBlog] = useState(false);
+  const [showDropdownStatePost, setShowDropDownStatePost] = useState(false);
+  const [showDropdownStatePage, setShowDropDownStatePage] = useState(false);
 
+  const showDropDownMenuBlog = (event) => {
+      setShowDropDownStateBlog(true);
+    }
+   const hideDropDownMenuBlog = (event) => {
+      
+
+      setShowDropDownStateBlog(false);
+    }
+
+    const showDropDownMenuPost = (event) => {
+      setShowDropDownStatePost(true);
+    }
+   const hideDropDownMenuPost = (event) => {
+      
+
+      setShowDropDownStatePost(false);
+    }
+  
+    const showDropDownMenuPage = (event) => {
+      setShowDropDownStatePage(true);
+    }
+   const hideDropDownMenuPage = (event) => {
+      
+
+      setShowDropDownStatePage(false);
+    }
   return (
 
     <div className="max-w-4xl mx-auto">
       <div className="grid grid-cols-2 items-center mt-5">
       <div className="justify-self-end space-x-4 text-sm font-semibold">
-        <a className="hover:text-red-400 fill-current" href="#">Home<svg className="inline-block h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
-        <a className="hover:text-red-400 fill-current" href="#">Blog<svg className="inline-block h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+        <a className="hover:text-red-400 fill-current" href="#">Home<svg className="inline-block h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+         
         </a>
-        <a className="hover:text-red-400 fill-current" href="#">Posts Features<svg className="inline-block h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
-        <a className="hover:text-red-400 fill-current" href="#">Pages<svg className="inline-block h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
+        <span onMouseEnter={showDropDownMenuBlog} onMouseLeave={hideDropDownMenuBlog}>
+
+        <a className="hover:text-red-400 fill-current relative" href="#">Blog<svg className="inline-block h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+          <ul onMouseLeave={hideDropDownMenuBlog} className={(showDropdownStateBlog ? "visible":"invisible") +" absolute bg-white p-4 space-y-2 mt-4 ml-8 z-10 inset-x-0 w-max shadow-lg"} >
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Blog Grid</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Blog Masonry</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Blog List</a></li>
+          </ul>
+        </a>
+        </span>
+        <span onMouseEnter={showDropDownMenuPost} onMouseLeave={hideDropDownMenuPost}>
+        <a className="hover:text-red-400 fill-current relative" href="#">Posts Features<svg className="inline-block h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+        <ul onMouseLeave={hideDropDownMenuPost} className={(showDropdownStatePost ? "visible":"invisible") +" absolute bg-white p-4 space-y-2 mt-4 ml-8 z-10 inset-x-0 w-max shadow-lg"} >
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Post Default</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Post Video</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Post Auio</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Post Gallery</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Post No Sidebar</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Post Left Sidebar</a></li>
+          </ul>
+        </a>
+        </span>
+        <span onMouseEnter={showDropDownMenuPage} onMouseLeave={hideDropDownMenuPage}>
+        <a className="hover:text-red-400 fill-current relative" href="#">Pages<svg className="inline-block h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+        <ul onMouseLeave={hideDropDownMenuPage} className={(showDropdownStatePage ? "visible":"invisible") +" absolute bg-white p-4 space-y-2 mt-4 ml-8 z-10 inset-x-0 w-max shadow-lg"} >
+            <li className="text-black text-xs hover:text-red-400"><a href="#">About</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Author</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Login</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Sign Up</a></li>
+            <li className="text-black text-xs hover:text-red-400"><a href="#">Page 404</a></li>
+          </ul>
+        </a>
+        </span>
         <a className="hover:text-red-400" href="#">Contact</a>
       </div>
       
