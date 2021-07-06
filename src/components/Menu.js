@@ -46,8 +46,8 @@ const Menu = () => {
     }
   return (
 
-    <div className="max-w-4xl mx-auto">
-      <div className="grid grid-cols-2 items-center mt-5">
+    <div className="max-w-full mx-auto mb-24">
+      <div className="z-10 fixed bg-white w-full p-4 top-0 grid md:grid-cols-2 grid-cols-1  items-center">
       <div className="justify-self-end space-x-4 text-sm font-semibold">
         <a className="hover:text-red-400 fill-current" href="#">Home<svg className="inline-block h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
          
